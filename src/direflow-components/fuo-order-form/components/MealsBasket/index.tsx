@@ -19,6 +19,8 @@ const MealsBasket: React.ComponentType = observer(() => {
   const { t } = useTranslation();
   const basketStore = useBasketStore();
 
+  console.log([...basketStore.basket.values()]);
+
   return (
     <Box display="flex" flexDirection="column" height="100%">
       <AppBar position="static">
@@ -45,7 +47,7 @@ const MealsBasket: React.ComponentType = observer(() => {
                 </TableRow>
               </TableHead>
               <TableBody>
-                {Object.values(basketStore.basket).map(([{ meal, qty }]) => (
+                {[...basketStore.basket.values()].map(({ meal, qty }) => (
                   <Fragment key={meal.id}>
                     {qty !== 0 && (
                       <TableRow>

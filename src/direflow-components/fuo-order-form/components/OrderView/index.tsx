@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { observer } from "mobx-react-lite";
 
 import dayjs, { Dayjs } from "dayjs";
@@ -6,6 +6,7 @@ import dayjs, { Dayjs } from "dayjs";
 import Container from "@material-ui/core/Container";
 import Box from "@material-ui/core/Box";
 import Grid from "@material-ui/core/Grid";
+import RootRef from "@material-ui/core/RootRef";
 
 import MealsMenu from "../MealsMenu";
 import MealsBasket from "../MealsBasket";
@@ -35,42 +36,47 @@ const OrderView: React.ComponentType<Props> = observer(({ cateringId }) => {
   const openMenu = () => setIsMenuOpen(true);
   const closeMenu = () => setIsMenuOpen(false);
 
+  const domRef = useRef<any>();
+
   return (
-    <>
-      <Container>
-        <Grid container justify="center">
-          <Grid item xs={10} md={6}>
-            <Box
-              height="100vh"
-              display="flex"
-              flexDirection="column"
-              justifyContent="center"
-            >
-              <ContactForm
-                dateValue={selectedDate}
-                onDateChange={selectDate}
-                onOpenMenuClick={openMenu}
-              />
-            </Box>
+    <div>
+      <RootRef rootRef={domRef}>
+        <Container>
+          <Grid container justify="center">
+            <Grid item xs={10} md={6}>
+              <Box
+                height="100vh"
+                display="flex"
+                flexDirection="column"
+                justifyContent="center"
+              >
+                <ContactForm
+                  dateValue={selectedDate}
+                  onDateChange={selectDate}
+                  onOpenMenuClick={openMenu}
+                />
+              </Box>
+            </Grid>
           </Grid>
-        </Grid>
-      </Container>
-      <MenuModal
-        open={isMenuOpen}
-        disableEnforceFocus
-        disableAutoFocus
-        onClose={closeMenu}
-      >
-        <Grid container spacing={3} style={{ outlineStyle: "none" }}>
-          <Grid item xs={4}>
-            <MealsBasket />
+        </Container>
+        <MenuModal
+          open={isMenuOpen}
+          disableEnforceFocus
+          disableAutoFocus
+          onClose={closeMenu}
+          container={domRef.current}
+        >
+          <Grid container spacing={3} style={{ outlineStyle: "none" }}>
+            <Grid item xs={4}>
+              <MealsBasket />
+            </Grid>
+            <Grid item xs={8}>
+              <MealsMenu meals={mealsStore.allMeals} />
+            </Grid>
           </Grid>
-          <Grid item xs={8}>
-            <MealsMenu meals={mealsStore.allMeals} />
-          </Grid>
-        </Grid>
-      </MenuModal>
-    </>
+        </MenuModal>
+      </RootRef>
+    </div>
   );
 });
 

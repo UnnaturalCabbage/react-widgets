@@ -32,7 +32,7 @@ export const BasketStore = types
   }))
   .views((self) => ({
     get totalPrice(): number {
-      return Object.values(self.basket).reduce(
+      return [...self.basket.values()].reduce(
         (acc, { qty, meal }) => acc + meal.price * qty,
         0
       );

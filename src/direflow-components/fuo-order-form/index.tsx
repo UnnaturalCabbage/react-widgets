@@ -4,7 +4,7 @@ import App from "./App";
 export default DireflowComponent.create({
   component: App,
   configuration: {
-    tagname: "frontend-react-widgets",
+    tagname: "fuo-order-form",
   },
   plugins: [
     {
