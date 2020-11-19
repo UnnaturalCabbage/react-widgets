@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useRef } from "react";
 import { useTranslation } from "react-i18next";
 
 import Grid from "@material-ui/core/Grid";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
+import RootRef from "@material-ui/core/RootRef";
 import { DateTimePicker } from "@material-ui/pickers";
 
 import dayjs, { Dayjs } from "dayjs";
@@ -25,23 +26,30 @@ const ContactForm: React.ComponentType<Props> = ({
   const minDate = dayjs().add(1, "day");
   const maxDate = dayjs().add(1, "week");
 
+  const domRef = useRef<any>();
+
   return (
     <>
       <Grid container alignItems="center" spacing={3}>
         <Grid item xs={8}>
-          <DateTimePicker
-            inputVariant="outlined"
-            fullWidth
-            margin="normal"
-            minDate={minDate}
-            maxDate={maxDate}
-            views={["date", "hours"]}
-            value={dateValue}
-            ampm={false}
-            onChange={(date) => onDateChange(date as Dayjs)}
-            placeholder={t("date")}
-            required
-          />
+          <RootRef rootRef={domRef}>
+            <DateTimePicker
+              inputVariant="outlined"
+              fullWidth
+              margin="normal"
+              minDate={minDate}
+              maxDate={maxDate}
+              views={["date", "hours"]}
+              value={dateValue}
+              ampm={false}
+              onChange={(date) => onDateChange(date as Dayjs)}
+              placeholder={t("date")}
+              required
+              DialogProps={{
+                container: domRef.current,
+              }}
+            />
+          </RootRef>
         </Grid>
         <Grid item xs={4}>
           <Button
