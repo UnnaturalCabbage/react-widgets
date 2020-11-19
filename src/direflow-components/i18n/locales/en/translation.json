@@ -1,0 +1,32 @@
+{
+    "language_name": "English",
+    "firstname": "Firstname",
+    "email": "Email",
+    "phone": "Phone",
+    "date": "Date",
+    "address": "Address",
+    "field_optional": "(optional)",
+
+    "total": "Total",
+
+    "meals_basket": "Basket",
+
+    "meal_type_first": "First meal",
+    "meal_type_second": "Second meal",
+    "meal_category_soup": "Soups",
+    "meal_category_cake": "Cakes",
+
+    "meal_name": "Name",
+    "meal_price": "Price",
+    "meal_weight": "Weight",
+    "meal_grams_short": "gm",
+    "meal_qty": "Qty",
+    "calories": "Calories",
+    "fat": "Fat",
+    "carbs": "Carbs",
+    "protein": "Protein",
+
+    "UAH": "UAH",
+
+    "open_menu": "Open menu"
+}
