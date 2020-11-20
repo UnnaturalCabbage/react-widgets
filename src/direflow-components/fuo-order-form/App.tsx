@@ -18,9 +18,9 @@ interface IProps {
 }
 
 const App: FC<IProps> = ({
-  cateringId = "",
-  primaryMainColor = "#3f51b5",
-  secondaryMainColor = "#f50057",
+  cateringId,
+  primaryMainColor,
+  secondaryMainColor,
 }) => {
   const theme = createMuiTheme({
     palette: {
@@ -43,6 +43,12 @@ const App: FC<IProps> = ({
       </MuiPickersUtilsProvider>
     </ThemeProvider>
   );
+};
+
+App.defaultProps = {
+  cateringId: "",
+  primaryMainColor: "#3f51b5",
+  secondaryMainColor: "#f50057",
 };
 
 export default App;
