@@ -1,7 +1,7 @@
 import { styled } from "@material-ui/core/styles";
-import Modal from "@material-ui/core/Modal";
+import RootModal from "Components/RootModal";
 
-const MenuModal = styled(Modal)(({ theme }) => ({
+const MenuModal = styled(RootModal)(({ theme }) => ({
   display: "flex",
   alignItems: "center",
   justifyContent: "center",

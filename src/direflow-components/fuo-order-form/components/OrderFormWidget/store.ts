@@ -1,7 +1,8 @@
 import { observable, action } from "mobx";
 import { useLocalObservable } from "mobx-react-lite";
-import MealModel, { IMealModel } from "../../../models/MealModel";
-import { useCateringService } from "../../../services/CateringService";
+
+import MealModel, { IMealModel } from "Models/MealModel";
+import { useCateringService } from "Services/CateringService";
 
 interface StoreProps {
   cateringId: string;

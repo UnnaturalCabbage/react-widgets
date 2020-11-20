@@ -3,7 +3,6 @@ import { useTranslation } from "react-i18next";
 import { observer } from "mobx-react-lite";
 
 import Typography from "@material-ui/core/Typography";
-import Paper from "@material-ui/core/Paper";
 import AppBar from "@material-ui/core/AppBar";
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
@@ -17,8 +16,8 @@ import {
   IMealModel,
   groupByCategory,
   groupByType,
-} from "../../../models/MealModel";
-import { useBasketStore } from "../../../stores/BasketStore";
+} from "Models/MealModel";
+import { useBasketStore } from "Stores/BasketStore";
 
 import MenuTable from "./components/MenuTable";
 import TabsContainer from "./components/TabsContainer";
