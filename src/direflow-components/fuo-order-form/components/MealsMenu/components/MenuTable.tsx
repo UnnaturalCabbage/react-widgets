@@ -7,9 +7,10 @@ import TextField from "@material-ui/core/TextField";
 import AddCircleIcon from "@material-ui/icons/AddCircle";
 import RemoveCircleIcon from "@material-ui/icons/RemoveCircle";
 
-import { IMealModel } from "Models/MealModel";
+import { IMealModel } from "src/models/MealModel";
+import { IBasket } from "src/stores/BasketStore";
+
 import MealsTable from "../../../components/MealsTable";
-import { IBasket } from "Stores/BasketStore";
 
 interface Props {
   meals: IMealModel[];

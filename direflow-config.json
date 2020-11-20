@@ -1,6 +1,7 @@
 {
   "build": {
     "componentPath": "direflow-components",
-    "filename": "direflowBundle.js"
+    "filename": "main.js",
+    "split": true
   }
 }

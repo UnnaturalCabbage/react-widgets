@@ -16,8 +16,8 @@ import {
   IMealModel,
   groupByCategory,
   groupByType,
-} from "Models/MealModel";
-import { useBasketStore } from "Stores/BasketStore";
+} from "src/models/MealModel";
+import { useBasketStore } from "src/stores/BasketStore";
 
 import MenuTable from "./components/MenuTable";
 import TabsContainer from "./components/TabsContainer";

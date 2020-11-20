@@ -1,5 +1,5 @@
 import { styled } from "@material-ui/core/styles";
-import RootModal from "Components/RootModal";
+import RootModal from "src/components/RootModal";
 
 const MenuModal = styled(RootModal)(({ theme }) => ({
   display: "flex",

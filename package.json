@@ -46,8 +46,6 @@
     "mobx": "^6.0.4",
     "mobx-react-lite": "^3.1.6",
     "mobx-state-tree": "^4.0.2",
-    "react": "16.13.1",
-    "react-dom": "16.13.1",
     "react-scripts": "3.4.1"
   },
   "devDependencies": {
@@ -67,6 +65,10 @@
     "ts-loader": "^6.2.2",
     "react-i18next": "^11.7.3",
     "react-number-format": "^4.4.1"
+  },
+  "peerDependencies": {
+    "react": "16.13.1",
+    "react-dom": "16.13.1"
   },
   "eslintConfig": {
     "extends": "react-app"

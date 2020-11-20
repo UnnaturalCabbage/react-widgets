@@ -5,9 +5,9 @@ import { MuiPickersUtilsProvider } from "@material-ui/pickers";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import DayjsUtils from "@date-io/dayjs";
 
-import "I18N";
+import "src/i18n";
 
-import { BasketStore, BasketStoreProvider } from "Stores/BasketStore";
+import { BasketStore, BasketStoreProvider } from "src/stores/BasketStore";
 
 import OrderFormWidget from "./components/OrderFormWidget";
 

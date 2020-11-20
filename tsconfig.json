@@ -18,7 +18,8 @@
     "noEmit": true,
     "jsx": "react",
     "isolatedModules": true,
-    "downlevelIteration": true
+    "downlevelIteration": true,
+    "baseUrl": "."
   },
   "include": [
     "src"
@@ -27,5 +28,4 @@
     "node_modules",
     "dist"
   ],
-  "extends": "./tsconfig.paths.json"
 }

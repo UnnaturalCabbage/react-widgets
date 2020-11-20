@@ -13,7 +13,7 @@ import Paper from "@material-ui/core/Paper";
 import AppBar from "@material-ui/core/AppBar";
 import Box from "@material-ui/core/Box";
 
-import { useBasketStore } from "Stores/BasketStore";
+import { useBasketStore } from "src/stores/BasketStore";
 
 const MealsBasket: React.ComponentType = observer(() => {
   const { t } = useTranslation();
